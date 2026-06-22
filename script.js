@@ -1,5 +1,25 @@
-const yearTarget = document.querySelector("[data-current-year]");
-if (yearTarget) yearTarget.textContent = String(new Date().getFullYear());
+const CONFIG = {
+    downloadLink: "https://github.com/marbleheraldignite/Uney-Core/releases/download/Uney-22-06-2026/UneyLoader_V4.zip",
+    lastUpdated: {
+        day: "22",
+        month: "06",
+        time: "13:35:27",
+        year: "2026",
+        monthPT: "Junho", 
+        monthEN: "June",   
+        monthES: "Junio",  
+        monthRU: "Июня",   
+        monthZH: "6月"     
+    }
+};
+
+const datePT = `${CONFIG.lastUpdated.day} de ${CONFIG.lastUpdated.monthPT} de ${CONFIG.lastUpdated.year}`;
+const dateEN = `${CONFIG.lastUpdated.monthEN} ${CONFIG.lastUpdated.day}, ${CONFIG.lastUpdated.year}`;
+const dateES = `${CONFIG.lastUpdated.day} de ${CONFIG.lastUpdated.monthES} de ${CONFIG.lastUpdated.year}`;
+const dateRU = `${CONFIG.lastUpdated.day} ${CONFIG.lastUpdated.monthRU} ${CONFIG.lastUpdated.year}`;
+const dateZH = `${CONFIG.lastUpdated.year}年${CONFIG.lastUpdated.monthZH}${CONFIG.lastUpdated.day}日`;
+const dateIntegrity = `${CONFIG.lastUpdated.day}.${CONFIG.lastUpdated.month}.${CONFIG.lastUpdated.year} ${CONFIG.lastUpdated.time}`;
+const versionBuild = `Build ${CONFIG.lastUpdated.year}.${CONFIG.lastUpdated.month}.${CONFIG.lastUpdated.day}`;
 
 const translations = {
     en: {
@@ -12,8 +32,8 @@ const translations = {
         "highlight-1": "Instant updates and safe rollbacks", "highlight-2": "One launcher, many games",
         "highlight-3": "Smart filters, verified mods", "highlight-4": "Password - Uney",
         "integrity-title": "File integrity", "integrity-subtitle": "Live package metadata pulled from the current launcher archive.",
-        "integrity-verified": "Verified build", "integrity-version-label": "Version",
-        "integrity-updated-label": "Last updated", "integrity-size-label": "File size",
+        "integrity-verified": "Verified build", "integrity-version-label": "Version", "integrity-version-val": versionBuild,
+        "integrity-updated-label": "Last updated", "integrity-updated-val": dateIntegrity, "integrity-size-label": "File size",
         "integrity-hash-label": "SHA256 fingerprint", "integrity-hash-hint": "Use the exact checksum below to verify the current archive.",
         "games-eyebrow": "Supported games", "games-title": "Supported Games",
         "games-desc-1": "One powerful launcher. Nine fully supported games.",
@@ -60,7 +80,7 @@ const translations = {
         "legal-terms-tab": "Terms", "legal-privacy-tab": "Privacy",
         "terms-page-title": "Terms of Service",
         "terms-hero-p": "These terms explain how access to the Uney website, launcher, downloads, support channels, and related services is provided. By using the site or requesting access, you agree to the terms below.",
-        "terms-meta-1": "Last updated: June 19, 2026", "terms-meta-2": "Digital access only", "terms-meta-3": "Moscow time operations",
+        "terms-meta-1": `Last updated: ${dateEN}`, "terms-meta-2": "Digital access only", "terms-meta-3": "Moscow time operations",
         "terms-summary-title": "Quick summary",
         "terms-summary-1": "Access is granted for personal use tied to the delivery and support terms listed here.",
         "terms-summary-2": "Users are responsible for keeping their own systems, credentials, and downloaded files secure.",
@@ -94,7 +114,7 @@ const translations = {
         "terms-footer-p": "Privacy explains what data is logged on visits, downloads, and protected admin access on the site.",
         "privacy-page-title": "Privacy Policy",
         "privacy-hero-p": "This page explains what data is logged when someone visits the Uney site, opens protected routes, or downloads a file. The policy is written to match the actual analytics and admin tools currently running on the site.",
-        "privacy-meta-1": "Last updated: June 19, 2026", "privacy-meta-2": "Traffic analytics enabled", "privacy-meta-3": "Storage window in Moscow time",
+        "privacy-meta-1": `Last updated: ${dateEN}`, "privacy-meta-2": "Traffic analytics enabled", "privacy-meta-3": "Storage window in Moscow time",
         "privacy-summary-title": "What is collected",
         "privacy-summary-1": "Visit events, download events, request time, and requested page or file.",
         "privacy-summary-2": "IP address, country, region, city, and provider information derived from the IP.",
@@ -137,8 +157,8 @@ const translations = {
         "highlight-1": "Atualizações instantâneas e rollbacks seguros", "highlight-2": "Um launcher, muitos jogos",
         "highlight-3": "Filtros inteligentes, mods verificados", "highlight-4": "Senha - Uney",
         "integrity-title": "Integridade do arquivo", "integrity-subtitle": "Metadados do pacote atual extraídos do arquivo do launcher.",
-        "integrity-verified": "Build verificado", "integrity-version-label": "Versão",
-        "integrity-updated-label": "Última atualização", "integrity-size-label": "Tamanho do arquivo",
+        "integrity-verified": "Build verificado", "integrity-version-label": "Versão", "integrity-version-val": versionBuild,
+        "integrity-updated-label": "Última atualização", "integrity-updated-val": dateIntegrity, "integrity-size-label": "Tamanho do arquivo",
         "integrity-hash-label": "Fingerprint SHA256", "integrity-hash-hint": "Use o checksum abaixo para verificar o arquivo atual.",
         "games-eyebrow": "Jogos suportados", "games-title": "Jogos Suportados",
         "games-desc-1": "Um launcher poderoso. Nove jogos totalmente suportados.",
@@ -185,7 +205,7 @@ const translations = {
         "legal-terms-tab": "Termos", "legal-privacy-tab": "Privacidade",
         "terms-page-title": "Termos de Serviço",
         "terms-hero-p": "Estes termos explicam como o acesso ao site, launcher, downloads, canais de suporte e serviços relacionados da Uney é fornecido. Ao usar o site ou solicitar acesso, você concorda com os termos abaixo.",
-        "terms-meta-1": "Última atualização: 19 de Junho de 2026", "terms-meta-2": "Apenas acesso digital", "terms-meta-3": "Operações no horário de Moscou",
+        "terms-meta-1": `Última atualização: ${datePT}`, "terms-meta-2": "Apenas acesso digital", "terms-meta-3": "Operações no horário de Moscou",
         "terms-summary-title": "Resumo rápido",
         "terms-summary-1": "O acesso é concedido para uso pessoal vinculado aos termos de entrega e suporte listados aqui.",
         "terms-summary-2": "Os usuários são responsáveis por manter seus sistemas, credenciais e arquivos baixados seguros.",
@@ -219,7 +239,7 @@ const translations = {
         "terms-footer-p": "A Privacidade explica quais dados são registrados em visitas, downloads e acesso administrativo protegido no site.",
         "privacy-page-title": "Política de Privacidade",
         "privacy-hero-p": "Esta página explica quais dados são registrados quando alguém visita o site da Uney, abre rotas protegidas ou baixa um arquivo. A política é escrita para corresponder às ferramentas de análise e administração atualmente em execução no site.",
-        "privacy-meta-1": "Última atualização: 19 de Junho de 2026", "privacy-meta-2": "Análise de tráfego ativada", "privacy-meta-3": "Janela de armazenamento no horário de Moscou",
+        "privacy-meta-1": `Última atualização: ${datePT}`, "privacy-meta-2": "Análise de tráfego ativada", "privacy-meta-3": "Janela de armazenamento no horário de Moscou",
         "privacy-summary-title": "O que é coletado",
         "privacy-summary-1": "Eventos de visita, eventos de download, hora da solicitação e página ou arquivo solicitado.",
         "privacy-summary-2": "Endereço IP, país, região, cidade e informações do provedor derivadas do IP.",
@@ -262,8 +282,8 @@ const translations = {
         "highlight-1": "Actualizaciones instantáneas y rollbacks seguros", "highlight-2": "Un launcher, muchos juegos",
         "highlight-3": "Filtros inteligentes, mods verificados", "highlight-4": "Contraseña - Uney",
         "integrity-title": "Integridad del archivo", "integrity-subtitle": "Metadatos del paquete actual extraídos del archivo del launcher.",
-        "integrity-verified": "Build verificado", "integrity-version-label": "Versión",
-        "integrity-updated-label": "Última actualización", "integrity-size-label": "Tamaño del archivo",
+        "integrity-verified": "Build verificado", "integrity-version-label": "Versión", "integrity-version-val": versionBuild,
+        "integrity-updated-label": "Última actualización", "integrity-updated-val": dateIntegrity, "integrity-size-label": "Tamaño del archivo",
         "integrity-hash-label": "Huella SHA256", "integrity-hash-hint": "Usa el checksum de abajo para verificar el archivo actual.",
         "games-eyebrow": "Juegos soportados", "games-title": "Juegos Soportados",
         "games-desc-1": "Un launcher poderoso. Nueve juegos totalmente soportados.",
@@ -310,7 +330,7 @@ const translations = {
         "legal-terms-tab": "Términos", "legal-privacy-tab": "Privacidad",
         "terms-page-title": "Términos de Servicio",
         "terms-hero-p": "Estos términos explican cómo se proporciona el acceso al sitio web, launcher, descargas, canales de soporte y servicios relacionados de Uney. Al usar el sitio o solicitar acceso, aceptas los términos a continuación.",
-        "terms-meta-1": "Última actualización: 19 de Junio de 2026", "terms-meta-2": "Solo acceso digital", "terms-meta-3": "Operaciones en hora de Moscú",
+        "terms-meta-1": `Última actualización: ${dateES}`, "terms-meta-2": "Solo acceso digital", "terms-meta-3": "Operaciones en hora de Moscú",
         "terms-summary-title": "Resumen rápido",
         "terms-summary-1": "El acceso se otorga para uso personal vinculado a los términos de entrega y soporte enumerados aquí.",
         "terms-summary-2": "Los usuarios son responsables de mantener seguros sus sistemas, credenciales y archivos descargados.",
@@ -336,7 +356,7 @@ const translations = {
         "terms-footer-title": "¿Necesitas el resto del conjunto legal?", "terms-footer-p": "La Privacidad explica qué datos se registran en visitas, descargas y acceso administrativo protegido en el sitio.",
         "privacy-page-title": "Política de Privacidad",
         "privacy-hero-p": "Esta página explica qué datos se registran cuando alguien visita el sitio de Uney, abre rutas protegidas o descarga un archivo. La política está escrita para coincidir con las herramientas de análisis y administración actualmente en uso.",
-        "privacy-meta-1": "Última actualización: 19 de Junio de 2026", "privacy-meta-2": "Análisis de tráfico activado", "privacy-meta-3": "Ventana de almacenamiento en hora de Moscú",
+        "privacy-meta-1": `Última actualización: ${dateES}`, "privacy-meta-2": "Análisis de tráfico activado", "privacy-meta-3": "Ventana de almacenamiento en hora de Moscú",
         "privacy-summary-title": "Qué se recopila",
         "privacy-summary-1": "Eventos de visita, eventos de descarga, hora de solicitud y página o archivo solicitado.",
         "privacy-summary-2": "Dirección IP, país, región, ciudad e información del proveedor derivada del IP.",
@@ -371,8 +391,8 @@ const translations = {
         "highlight-1": "即时更新和安全回滚", "highlight-2": "一个启动器，多个游戏",
         "highlight-3": "智能过滤器，已验证的模组", "highlight-4": "密码 - Uney",
         "integrity-title": "文件完整性", "integrity-subtitle": "从当前启动器存档中提取的实时包元数据。",
-        "integrity-verified": "已验证构建", "integrity-version-label": "版本",
-        "integrity-updated-label": "最后更新", "integrity-size-label": "文件大小",
+        "integrity-verified": "已验证构建", "integrity-version-label": "版本", "integrity-version-val": versionBuild,
+        "integrity-updated-label": "最后更新", "integrity-updated-val": dateIntegrity, "integrity-size-label": "文件大小",
         "integrity-hash-label": "SHA256 指纹", "integrity-hash-hint": "使用下面的精确校验和来验证当前存档。",
         "games-eyebrow": "支持的游戏", "games-title": "支持的游戏",
         "games-desc-1": "一个强大的启动器。九款完全支持的游戏。",
@@ -418,7 +438,7 @@ const translations = {
         "modal-note-4-prefix": "如果遇到问题，请加入我们的", "modal-note-4-link": "Discord", "modal-close": "关闭",
         "legal-terms-tab": "条款", "legal-privacy-tab": "隐私",
         "terms-page-title": "服务条款", "terms-hero-p": "这些条款解释了如何提供对 Uney 网站、启动器、下载、支持渠道和相关服务的访问。通过使用本网站或请求访问，您同意以下条款。",
-        "terms-meta-1": "最后更新：2026年06月19日", "terms-meta-2": "仅数字访问", "terms-meta-3": "莫斯科时间运营",
+        "terms-meta-1": `最后更新: ${dateZH}`, "terms-meta-2": "仅数字访问", "terms-meta-3": "莫斯科时间运营",
         "terms-summary-title": "快速摘要", "terms-summary-1": "访问权限仅授予与此处列出的交付和支持条款相关的个人使用。", "terms-summary-2": "用户负责保持其系统、凭据和下载文件的安全。", "terms-summary-3": "服务可用性、发布和更新节奏可能会在不通知的情况下更改。", "terms-summary-4": "滥用、转售、欺诈性付款活动或对服务的攻击可能导致暂停。",
         "terms-glance-title": "概览", "terms-glance-op-label": "运营商", "terms-glance-op-val": "Uney Cheats", "terms-glance-scope-label": "范围", "terms-glance-scope-val": "网站、启动器交付、更新访问和支持通信。", "terms-glance-region-label": "地区", "terms-glance-region-val": "全球数字交付。内部时间以莫斯科时间跟踪。",
         "terms-s1-title": "1. 服务范围", "terms-s1-p": "Uney 提供对网站、下载交付和围绕其基于启动器的软件的支持材料的访问。网站内容、文件结构、发布说明、可用性和访问流程可能随时间推移而发展。",
@@ -432,7 +452,7 @@ const translations = {
         "terms-s8-title": "8. 这些条款的变更", "terms-s8-p": "这些条款可能会随着网站、交付模式或支持流程的变化而更新。网站上发布的最新版本从发布之日起管辖未来的使用。",
         "terms-footer-title": "需要完整的法律文件集？", "terms-footer-p": "隐私政策解释了在网站的访问、下载和受保护的管理员访问中记录了哪些数据。",
         "privacy-page-title": "隐私政策", "privacy-hero-p": "本页说明当有人访问 Uney 网站、打开受保护路由或下载文件时记录了哪些数据。该政策旨在与目前在网站上运行的实际分析和管理工具相匹配。",
-        "privacy-meta-1": "最后更新：2026年06月19日", "privacy-meta-2": "流量分析已启用", "privacy-meta-3": "存储窗口在莫斯科时间",
+        "privacy-meta-1": `最后更新: ${dateZH}`, "privacy-meta-2": "流量分析已启用", "privacy-meta-3": "存储窗口在莫斯科时间",
         "privacy-summary-title": "收集的内容", "privacy-summary-1": "访问事件、下载事件、请求时间以及请求的页面或文件。", "privacy-summary-2": "IP 地址、国家、地区、城市以及从 IP 派生的提供商信息。", "privacy-summary-3": "浏览器用户代理、基本引荐来源或来源，以及受保护管理员访问的会话数据。", "privacy-summary-4": "用于支持、诊断、滥用监控和网站健康的短滚动日志存储。",
         "privacy-glance-title": "概览", "privacy-glance-purpose-label": "目的", "privacy-glance-purpose-val": "分析、滥用预防、支持审查和下载交付可见性。", "privacy-glance-admin-label": "仅限管理员可见", "privacy-glance-admin-val": "详细日志存储在私有所有者仪表板和导出中。", "privacy-glance-edge-label": "第三方边缘", "privacy-glance-edge-val": "流量可能通过 Cloudflare 和标准托管基础设施传递。",
         "privacy-s1-title": "1. 访问和下载分析", "privacy-s1-p": "当网站通过其主要入口点打开时，可能会记录访问事件。当通过下载路由提供文件时，可能会记录下载事件。这些记录有助于跟踪交付健康状况并了解流量来源。",
@@ -455,8 +475,8 @@ const translations = {
         "highlight-1": "Мгновенные обновления и безопасные откаты", "highlight-2": "Один лаунчер, много игр",
         "highlight-3": "Умные фильтры, проверенные моды", "highlight-4": "Пароль - Uney",
         "integrity-title": "Целостность файла", "integrity-subtitle": "Метаданные текущего пакета из архива лаунчера.",
-        "integrity-verified": "Сборка проверена", "integrity-version-label": "Версия",
-        "integrity-updated-label": "Последнее обновление", "integrity-size-label": "Размер файла",
+        "integrity-verified": "Сборка проверена", "integrity-version-label": "Версия", "integrity-version-val": versionBuild,
+        "integrity-updated-label": "Последнее обновление", "integrity-updated-val": dateIntegrity, "integrity-size-label": "Размер файла",
         "integrity-hash-label": "SHA256 отпечаток", "integrity-hash-hint": "Используйте точную контрольную сумму ниже для проверки архива.",
         "games-eyebrow": "Поддерживаемые игры", "games-title": "Поддерживаемые Игры",
         "games-desc-1": "Один мощный лаунчер. Девять полностью поддерживаемых игр.",
@@ -502,7 +522,7 @@ const translations = {
         "modal-note-4-prefix": "Если возникнут проблемы, присоединитесь к нашему", "modal-note-4-link": "Discord", "modal-close": "Закрыть",
         "legal-terms-tab": "Условия", "legal-privacy-tab": "Конфиденциальность",
         "terms-page-title": "Условия использования", "terms-hero-p": "Эти условия объясняют, как предоставляется доступ к сайту Uney, лаунчеру, загрузкам, каналам поддержки и связанным услугам. Используя сайт или запрашивая доступ, вы соглашаетесь с приведёнными ниже условиями.",
-        "terms-meta-1": "Последнее обновление: 19 июня 2026.", "terms-meta-2": "Только цифровой доступ", "terms-meta-3": "Операции по московскому времени",
+        "terms-meta-1": `Последнее обновление: ${dateRU}`, "terms-meta-2": "Только цифровой доступ", "terms-meta-3": "Операции по московскому времени",
         "terms-summary-title": "Краткое резюме", "terms-summary-1": "Доступ предоставляется для личного использования в соответствии с условиями доставки и поддержки, перечисленными здесь.", "terms-summary-2": "Пользователи несут ответственность за сохранность своих систем, учётных данных и загруженных файлов.", "terms-summary-3": "Доступность сервиса, выпуски и периодичность обновлений могут изменяться без предварительного уведомления.", "terms-summary-4": "Злоупотребление, перепродажа, мошенническая платёжная деятельность или атаки на сервис могут привести к приостановке.",
         "terms-glance-title": "Кратко", "terms-glance-op-label": "Оператор", "terms-glance-op-val": "Uney Cheats", "terms-glance-scope-label": "Область применения", "terms-glance-scope-val": "Сайт, доставка лаунчера, доступ к обновлениям и поддержка.", "terms-glance-region-label": "Регион", "terms-glance-region-val": "Всемирная цифровая доставка. Внутреннее время отслеживается по московскому.",
         "terms-s1-title": "1. Область применения услуги", "terms-s1-p": "Uney предоставляет доступ к сайту, доставке загрузок и материалам поддержки своего программного обеспечения на основе лаунчера. Содержимое сайта, структура файлов, примечания к выпускам, доступность и процесс доступа могут развиваться с течением времени.",
@@ -516,7 +536,7 @@ const translations = {
         "terms-s8-title": "8. Изменения этих условий", "terms-s8-p": "Эти условия могут обновляться по мере изменения сайта, модели доставки или процесса поддержки. Последняя опубликованная версия на сайте регулирует будущее использование с даты её публикации.",
         "terms-footer-title": "Нужен весь юридический набор?", "terms-footer-p": "Конфиденциальность объясняет, какие данные регистрируются при посещениях, загрузках и защищённом административном доступе на сайте.",
         "privacy-page-title": "Политика конфиденциальности", "privacy-hero-p": "На этой странице объясняется, какие данные регистрируются, когда кто-то посещает сайт Uney, открывает защищённые маршруты или загружает файл. Политика написана в соответствии с фактическими инструментами аналитики и администрирования, работающими на сайте.",
-        "privacy-meta-1": "Последнее обновление: 19 июня 2026.", "privacy-meta-2": "Аналитика трафика включена", "privacy-meta-3": "Окно хранения по московскому времени",
+        "privacy-meta-1": `Последнее обновление: ${dateRU}`, "privacy-meta-2": "Аналитика трафика включена", "privacy-meta-3": "Окно хранения по московскому времени",
         "privacy-summary-title": "Что собирается", "privacy-summary-1": "События посещения, события загрузки, время запроса и запрошенная страница или файл.", "privacy-summary-2": "IP-адрес, страна, регион, город и информация о провайдере, полученная из IP.", "privacy-summary-3": "Браузерный user-agent, базовый реферер или источник, и данные сессии для защищённого административного доступа.", "privacy-summary-4": "Кратковременное скользящее хранилище журналов для поддержки, диагностики, мониторинга злоупотреблений и работоспособности сайта.",
         "privacy-glance-title": "Кратко", "privacy-glance-purpose-label": "Цель", "privacy-glance-purpose-val": "Аналитика, предотвращение злоупотреблений, проверка поддержки и видимость доставки загрузок.", "privacy-glance-admin-label": "Видимость только для администратора", "privacy-glance-admin-val": "Подробные журналы хранятся для приватной панели владельца и экспортов.", "privacy-glance-edge-label": "Сторонний edge", "privacy-glance-edge-val": "Трафик может проходить через Cloudflare и стандартную хостинговую инфраструктуру.",
         "privacy-s1-title": "1. Аналитика посещений и загрузок", "privacy-s1-p": "При открытии сайта через его основную точку входа может регистрироваться событие посещения. При подаче файла через маршрут загрузки может регистрироваться событие загрузки. Эти записи помогают отслеживать работоспособность доставки и понимать источники трафика.",
@@ -559,6 +579,25 @@ function applyLanguage(lang) {
     document.documentElement.lang = lang === "pt-br" ? "pt-BR" : lang;
     localStorage.setItem("language", lang);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a').forEach(link => {
+        const i18n = link.getAttribute('data-i18n');
+        if (i18n === 'nav-download' || i18n === 'btn-download' || (link.href && link.href.includes("github.com"))) {
+            link.href = CONFIG.downloadLink;
+        }
+    });
+    
+    
+    const langSelector = document.getElementById("lang-selector");
+    if (langSelector) {
+        langSelector.addEventListener("change", (e) => applyLanguage(e.target.value));
+        const savedLang = localStorage.getItem("language") || "en";
+        langSelector.value = savedLang;
+        applyLanguage(savedLang);
+    }
+});
+
 
 function initCopyButtons() {
     document.querySelectorAll("[data-copy-text]").forEach(button => {
@@ -862,3 +901,14 @@ const legalRevealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.06 });
 
 document.querySelectorAll(".reveal").forEach(el => legalRevealObserver.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a').forEach(link => {
+        const i18n = link.getAttribute('data-i18n');
+        
+        
+        if (i18n === 'nav-download' || i18n === 'btn-download' || (link.href && link.href.includes("github.com"))) {
+            link.href = CONFIG.downloadLink;
+        }
+    });
+});
