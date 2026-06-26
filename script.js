@@ -1,7 +1,7 @@
 const CONFIG = {
-    downloadLink: "https://github.com/marbleheraldignite/Uney-Core/releases/download/Uney-22-06-2026/UneyLoader_V4.zip",
+    downloadLink: "https://github.com/marbleheraldignite/Uney-Core/releases/download/Uney-26-06-2026/UneyLoader_V5.zip",
     lastUpdated: {
-        day: "22",
+        day: "26",
         month: "06",
         time: "13:35:27",
         year: "2026",
